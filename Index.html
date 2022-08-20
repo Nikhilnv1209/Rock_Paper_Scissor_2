@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper And Scissors</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asap&display=swap" rel="stylesheet">
+  </head>
+
+  <section class="game">
+    <div class="score">
+      <div class="player-score">
+        <h2>Player</h2>
+        <p>0</p>
+      </div>
+      <div class="computer-score">
+        <h2>Computer</h2>
+        <p>0</p>
+      </div>
+    </div>
+
+    <div class="intro">
+      <h2>Rock Paper And Scissor</h2>
+      <button>Lets play</button>
+    </div>
+
+    <div class="match FadeOut">
+      <h2 class="winner">Choose an option</h2>
+      <div class="hands">
+        <img class="player-hand" src="./rock.png" alt="" />
+        <img class="computer-hand" src="./rock.png" alt="" />
+      </div>
+
+      <div class="options">
+        <button class="rock">rock</button>
+        <button class="paper">paper</button>
+        <button class="scissors">scissors</button>
+      </div>
+    </div>
+  </section>
+
+  <body>
+    <script src="./app.js"></script>
+  </body>
+</html>
