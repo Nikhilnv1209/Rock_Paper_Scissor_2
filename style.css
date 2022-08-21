@@ -152,3 +152,39 @@ div.FadeIn {
     }
   }
   
+
+
+@media (max-width: 450px) and (min-width: 330px)
+{
+   .intro h2 {
+    font-size: 2rem;
+   }
+
+    .match h2{
+      padding-top: 60px;
+      font-size: 1.5rem;
+    }
+
+    .hands{
+      width: 100vw;
+      height: 240px;
+    }
+
+    .hands img
+    {
+      height: 70%;
+      width: 70%;
+    } 
+
+    .options{
+      justify-content: center;
+      gap: 5%;
+    }
+    .options button{
+      height: 30px;
+      width: 70px;
+      font-size: 15px;
+    }
+    
+    
+}
