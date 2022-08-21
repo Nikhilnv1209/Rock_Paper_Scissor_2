@@ -2,11 +2,13 @@ const game = () => {
   let Pscore = 0;
   let Cscore = 0;
 
+
+  const match = document.querySelector(".match");
   // starting the game
   const startGame = () => {
     const playBtn = document.querySelector(".intro button");
     const introScreen = document.querySelector(".intro");
-    const match = document.querySelector(".match");
+    
 
     playBtn.addEventListener("click", () => {
       introScreen.classList.add("FadeOut");
@@ -28,7 +30,6 @@ const game = () => {
     hands.forEach((hand) => {
       hand.addEventListener("animationend", function () {
         this.style.animation = "";
-        this.img.src = "./rock.png";
       });
     });
 
@@ -56,6 +57,10 @@ const game = () => {
           updateScore();
           
         }, 2000);
+        
+        setTimeout(() => {
+        winnercheck();
+        }, 2200);
 
         // add animation to hand action
         playerhand.style.animation = "shakeplayer 2s ease";
@@ -120,6 +125,39 @@ const game = () => {
     playerScore.textContent = Pscore;
     computerScore.textContent = Cscore;
   };
+
+
+
+
+
+  const winnercheck = () => {
+
+    const winnermsg = document.querySelector('.winner_msg h2');
+    const winnerdisplay = document.querySelector('.winner_msg');
+    if(Pscore === 10){
+      winnermsg.textContent = "Player Wins";
+    }
+    else if(Cscore === 10){
+      winnermsg.textContent = "Computer Wins";
+    }
+    
+    if(Pscore === 10 || Cscore === 10 )
+    {
+      winnerdisplay.classList.add('FadeIn');
+      match.classList.remove('FadeIn');
+      match.classList.add('FadeOut');
+      return;
+    }
+  };
+
+
+
+
+
+
+
+
+
 
   // it calls the start game Function
   startGame();

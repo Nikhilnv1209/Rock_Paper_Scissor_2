@@ -87,6 +87,46 @@ section {
   transform: rotateY(180deg);
 }
 
+
+.winner_msg{
+  font-size: 2.8rem;
+  color: rgb(244, 224, 224);
+  text-align: center;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 27%;
+  flex-direction: column;
+  width: 50vw;
+  left: 25%;
+  gap: 23%;
+  height: 33vh;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s ease 0.7s;
+}
+
+.winner_msg img{
+  width: 19%;
+  height: 45%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* js classes */
 
 div.FadeOut {
@@ -186,5 +226,13 @@ div.FadeIn {
       font-size: 15px;
     }
     
+
+    .winner_msg{
+      font-size: 1rem;
+    }
     
+    .winner_msg img{
+      width: 30%;
+      height: 30%;
+    }
 }
