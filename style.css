@@ -59,7 +59,7 @@ section {
 
 .intro button:hover,
 .match button:hover,
-.winner_msg button:hover {
+.winner_msg button:hover{
   box-shadow: 0px 0px 8px 1px rgb(119, 225, 190);
   cursor: pointer;
 }
@@ -71,7 +71,7 @@ section {
   transform: translate(-50%, -50%);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease 0.5s;
+  transition: opacity 0.5s ease 0.7s;
 }
 
 .winner {
@@ -80,7 +80,7 @@ section {
   text-align: center;
 }
 
-.hands {
+.hands{
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -97,7 +97,8 @@ section {
   transform: rotateY(180deg);
 }
 
-.winner_msg {
+
+.winner_msg{
   font-size: 2.8rem;
   color: rgb(244, 224, 224);
   text-align: center;
@@ -113,13 +114,29 @@ section {
   height: 50vh;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.5s ease .9s;
+  transition: opacity 0.5s ease 0.7s;
 }
 
-.winner_msg img {
+.winner_msg img{
   width: 10vw;
   height: 20vh;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* js classes */
 
@@ -159,80 +176,80 @@ div.FadeIn {
   }
 }
 
+
 @keyframes shakecomputer {
-  0% {
-    transform: translateY(0px);
+    0% {
+      transform: translateY(0px);
+    }
+    15% {
+      transform: translateY(-50px);
+    }
+    30% {
+      transform: translateY(0px);
+    }
+    45% {
+      transform: translateY(-50px);
+    }
+    60% {
+      transform: translateY(0px);
+    }
+  
+    75% {
+      transform: translateY(-50px);
+    }
+  
+    100% {
+      transform: translateY(0px);
+    }
   }
-  15% {
-    transform: translateY(-50px);
-  }
-  30% {
-    transform: translateY(0px);
-  }
-  45% {
-    transform: translateY(-50px);
-  }
-  60% {
-    transform: translateY(0px);
-  }
+  
 
-  75% {
-    transform: translateY(-50px);
-  }
 
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-@media (max-width: 450px) and (min-width: 330px) {
-  .score {
-    padding-top: 20px;
-  }
-  .intro{
-    padding-top: 20px;
-  }
-  .intro h2 {
+  @media (max-width: 450px) and (min-width: 330px)
+{
+   .intro h2 {
     font-size: 2rem;
-  }
-  .match h2 {
-    padding-top: 20px;
-    font-size: 1.5rem;
-  }
+   }
 
-  .hands {
-    width: 100vw;
-    height: 200px;
-  }
+    .match h2{
+      font-size: 1.5rem;
+    }
 
-  .hands img {
-    height: 80%;
-    width: 80%;
-  }
+    .hands{
+      width: 100vw;
+      height: 190px;
+    }
 
-  .options {
-    justify-content: center;
-    gap: 5%;
-  }
-  .options button {
-    height: 30px;
-    width: 70px;
-    font-size: 15px;
-  }
+    .hands img
+    {
+      height: 72%;
+      width: 70%;
+    } 
 
-  .winner_msg {
-    font-size: 1rem;
-    gap: 13%;
-  }
+    .options{
+      justify-content: center;
+      gap: 5%;
+    }
+    .options button{
+      height: 30px;
+      width: 70px;
+      font-size: 15px;
+    }
+    
 
-  .winner_msg img {
-    width: 75px;
-    height: 75px;
-  }
+    .winner_msg{
+      font-size: 1rem;
+      gap: 13%;
+    }
+    
+    .winner_msg img{
+      width: 75px;
+      height: 75px;
+    }
 
-  .winner_msg button {
-    height: 30px;
-    width: 83px;
-    font-size: 15px;
-  }
+    .winner_msg button{
+      height: 30px;
+      width: 83px;
+      font-size: 15px;
+    }
 }
