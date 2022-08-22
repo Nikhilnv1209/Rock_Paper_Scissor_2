@@ -2,13 +2,15 @@ const game = () => {
   let Pscore = 0;
   let Cscore = 0;
 
-
+  //Screens
   const match = document.querySelector(".match");
+  const introScreen = document.querySelector(".intro");
+  const winnerdisplay = document.querySelector(".winner_msg");
+
   // starting the game
   const startGame = () => {
     const playBtn = document.querySelector(".intro button");
-    const introScreen = document.querySelector(".intro");
-    
+    introScreen.style.transition = "opacity 0.5s ease";
 
     playBtn.addEventListener("click", () => {
       introScreen.classList.add("FadeOut");
@@ -42,8 +44,8 @@ const game = () => {
         const computerNumber = Math.floor(Math.random() * 3);
         const computerChoice = computeroptions[computerNumber];
 
-        playerhand.src = './rock.png';
-        computerhand.src = './rock.png';
+        playerhand.src = "./rock.png";
+        computerhand.src = "./rock.png";
 
         // this function is used to delay the hand change animation
         setTimeout(() => {
@@ -55,11 +57,10 @@ const game = () => {
           // this is refering to the choice that is clicked by the user
           compareHands(this.textContent, computerChoice);
           updateScore();
-          
         }, 2000);
-        
+
         setTimeout(() => {
-        winnercheck();
+          winnercheck();
         }, 2200);
 
         // add animation to hand action
@@ -126,38 +127,35 @@ const game = () => {
     computerScore.textContent = Cscore;
   };
 
-
-
-
-
   const winnercheck = () => {
-
-    const winnermsg = document.querySelector('.winner_msg h2');
-    const winnerdisplay = document.querySelector('.winner_msg');
-    if(Pscore === 10){
+    const winnermsg = document.querySelector(".winner_msg h2");
+    const restartbtn = document.querySelector(".Restart_button");
+    if (Pscore === 10) {
       winnermsg.textContent = "Player Wins";
-    }
-    else if(Cscore === 10){
+    } else if (Cscore === 10) {
       winnermsg.textContent = "Computer Wins";
     }
-    
-    if(Pscore === 10 || Cscore === 10 )
-    {
-      winnerdisplay.classList.add('FadeIn');
-      match.classList.remove('FadeIn');
-      match.classList.add('FadeOut');
-      return;
+
+    if (Pscore === 10 || Cscore === 10) {
+      introScreen.style.transition = "opacity 0.5s ease 1s";
+      winnerdisplay.classList.add("FadeIn");
+      match.classList.remove("FadeIn");
     }
+
+    restartbtn.addEventListener("click", () => {
+      Pscore = 0;
+      Cscore = 0;
+      updateScore();
+      winnerdisplay.classList.remove("FadeIn");
+      introScreen.classList.remove("FadeOut");
+      // introScreen.classList.add('FadeIn');
+      setTimeout(() => {
+        game();
+      }, 1500);
+    });
+
+    return;
   };
-
-
-
-
-
-
-
-
-
 
   // it calls the start game Function
   startGame();
